@@ -16,6 +16,9 @@ form  {
   background: $yellow;
 }
 
+form > h3 {
+  align-items: flex-start;
+}
 
 .form-row > .col, .form-row > [class*="col-"] {
      padding-right: 10px;

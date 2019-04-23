@@ -7,6 +7,9 @@ form {
   margin: 20px 10px;
   background: #ffeaa7; }
 
+form > h3 {
+  align-items: flex-start; }
+
 .form-row > .col, .form-row > [class*="col-"] {
   padding-right: 10px;
   padding-left: 10px; }
