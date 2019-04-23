@@ -1,0 +1,80 @@
+h1 {
+  font-size: .8em;
+  background: #ffeaa7;
+  padding: 1em;
+  color: #DC06B1; }
+  h1 span {
+    font-family: 'Lobster', cursive; }
+
+.nav {
+  align-items: center;
+  width: 100%;
+  font-size: 1em; }
+
+.open-slide {
+  z-index: 5;
+  transition: 500ms; }
+
+.btn-close {
+  transition: 500ms; }
+
+span > a > img {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  z-index: 5; }
+
+ul#side-menu {
+  padding: 0;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 5;
+  transition: 500ms;
+  margin-top: 50px;
+  width: 0; }
+  ul#side-menu .side-nav {
+    width: 0; }
+
+#side-menu li a {
+  display: block;
+  text-decoration: none;
+  height: 30px;
+  line-height: 30px;
+  font-size: 24px;
+  background-color: #DC06B1;
+  width: 140px;
+  color: white;
+  margin: 4px 0;
+  padding-left: 15px;
+  text-transform: lowercase; }
+
+#side-menu li a:hover {
+  background-color: #fc9de9;
+  text-decoration: none;
+  color: #650351; }
+
+@media only screen and (min-width: 576px) {
+  .header__content {
+    width: 75vw; }
+  .header__logo .header__name::before {
+    font-size: 275px;
+    line-height: 175px; }
+  .header__logo .header__name {
+    font-size: 50px;
+    line-height: 1em; }
+  .header__camp-dates {
+    display: block;
+    font-family: 'Lobster', cursive;
+    text-shadow: 1px 1px 3px #fff;
+    font-size: 2rem;
+    align-self: center; }
+    .header__camp-dates a {
+      color: #DC06B1; }
+  h2 {
+    font-size: 2em;
+    text-align: center; } }
+
+@media only screen and (min-width: 876px) {
+  address {
+    flex-direction: row; } }

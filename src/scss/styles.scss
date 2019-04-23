@@ -1,0 +1,373 @@
+@import "header";
+@import "navigation";
+@import "contact";
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+$pink: #fd79a8;
+$yellow: #ffeaa7;
+$bg-color: #8FD2FD;
+$darker-bg-color: #0984e3;
+$lighten-bg-color: lighten($yellow, 5%);
+
+.pink {
+  color: $pink;
+}
+
+* {
+  text-decoration: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100vw;
+  color: #2d3436;
+  background: $darker-bg-color;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 16px;
+  // font-weight: lighter;
+  scroll-behavior: smooth;
+  // overflow-y: scroll;
+}
+
+.section__content-2 h3 {
+  text-align: center;
+  margin-top: 1em;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.3);
+  align-self: center;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+}
+
+#camp .icon-container,
+#lessons .icon-container {
+  justify-content: flex-end;
+  align-items: center;
+  align-self: end;
+  max-height: 55px;
+}
+
+.sm-icons {
+  max-width: 55px;
+}
+
+#board,
+#camp {
+  // background-color: $yellow;
+  z-index: 1;
+}
+
+#camp::before {
+  content: '';
+  position: absolute;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  // background: url(../assets/img/saddle-bg.png);
+  // background-repeat: repeat;
+  display: none;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  place-items: center;
+  justify-content: center;
+}
+
+.section__wrapper {
+  background-color: $yellow;
+  display: flex;
+  position: relative;
+  z-index: 3;
+}
+
+.section__content {
+  align-items: center;
+  position: relative;
+  z-index: 3;
+  margin: 1em;
+  max-width: 500px;
+  // background-color: red;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "title . icon" "para para para" "h4 h4 h4" "list list list" "image image image";
+}
+
+h3 {
+  grid-area: title;
+}
+
+h4 {
+  grid-area: h4;
+}
+
+.icon-container {
+  grid-area: icon;
+}
+
+.section__p {
+  grid-area: para;
+}
+
+.camp-dates {
+  grid-area: list;
+}
+
+.image {
+  grid-area: image;
+}
+
+h3 {
+  color: $pink;
+  font-family: 'Lobster', cursive;
+  font-weight: 600;
+  font-size: 3em;
+  align-self: end;
+}
+
+.section__p {
+  align-self: start;
+  margin-top: 2em;
+}
+
+h4 {
+  color: $pink;
+  font-weight: lighter;
+  text-align: center;
+  font-family: 'Lobster', cursive;
+}
+
+#camp .camp-dates,
+img.image {
+  justify-self: center;
+  text-align: center;
+  font-size: 14px;
+  line-height: 2em;
+}
+
+.cta {
+  font-size: 18px;
+}
+
+img.image {
+  max-width: 300px;
+}
+
+.section__pictures {
+  display: none;
+}
+
+.section__content-2 {
+  align-items: center;
+  position: relative;
+  z-index: 3;
+  margin: 1em;
+  display: flex;
+  flex-direction: column;
+  background-color: $darker-bg-color;
+  // box-shadow: 1px 1px 3px rgba(0, 0, 0, .5);
+  // margin: 1em;
+}
+
+.section__ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1em;
+  width: 100vw;
+  align-items: center;
+  // height: 80vh;
+}
+
+.section__ul > li {
+  // display: block;
+  text-align: center;
+  // border: 2px solid white;
+  padding: 0.5em;
+  width: 300px;
+}
+// Small devices (landscape phones, 576px and up)
+@media only screen and (min-width: 576px) {
+  #board {
+    .section__pictures {
+      // height: 45vh;
+      background: transparent;
+      margin: 0 0 1em;
+    }
+
+    .sm-icons {
+      max-width: 35px;
+    }
+  }
+
+  #contact {
+    background: $darker-bg-color;
+  }
+  // .section__content-2,
+  // .section__pictures {
+  //   margin: 3em;
+  //   align-items: center;
+  //
+  // }
+  .section__content {
+    padding: 1em;
+    background-color: $yellow;
+  }
+
+  .section__content-2 {}
+
+  .section__pictures {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    background: transparent;
+    padding: 1em;
+    margin: 0 0 1em;
+  }
+
+  .pictures__image-1,
+  .pictures__image-2,
+  .pictures__image-3 {
+    display: none;
+  }
+
+  .section__pictures img {
+    box-shadow: 1px 3px 4px rgba(0, 0, 0, .5);
+  }
+
+  .section__pictures img::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .section__pictures img:hover {
+    animation: shake 0.4s;
+    animation-iteration-count: 1;
+  }
+  @keyframes shake {
+    0% {
+      transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    25% {
+      transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    50% {
+      transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    75% {
+      transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    100% {
+      transform: translate(1px, -1px) rotate(1deg);
+    }
+  }
+
+  .section__ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  // .section__ul > li {
+  //     width: 28vw;
+  // }
+}
+@media only screen and (min-width: 876px) {
+  main section {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  #camp::before {
+    display: block;
+  }
+
+  #board {
+    .section__pictures {
+      height: 100vh;
+      background: transparent;
+    }
+
+    .sm-icons {
+      max-width: 55px;
+    }
+  }
+
+  .section__content {
+    margin: 1em;
+    // box-shadow: 1px 1px 3px rgba(0, 0, 0, .5);
+  }
+
+  .section__content-2 {
+    // height: 95vh;
+  }
+
+  .section__ul {
+    width: 350px;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .section__pictures {
+    box-shadow: none;
+    height: 100vh;
+    background: transparent;
+    width: 45vw;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pictures__image-1,
+  .pictures__image-2,
+  .pictures__image-3,
+  .pictures__image-4 {
+    display: block;
+    // max-width: 300px;
+    margin: 0.5em;
+  }
+
+  .pictures__image-4 {
+    max-width: 400px;
+  }
+
+  .pictures__image-3 {
+    max-width: 400px;
+    align-self: flex-end;
+  }
+
+  .pictures__image-1 {
+    max-width: 300px;
+    align-self: flex-end;
+  }
+
+  .pictures__image-2 {
+    max-width: 350px;
+  }
+}
